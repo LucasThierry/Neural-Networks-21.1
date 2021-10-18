@@ -1,5 +1,5 @@
 """
-network.py
+network_tanh.py
 ~~~~~~~~~~
 
 A module to implement the stochastic gradient descent learning
@@ -20,7 +20,7 @@ from sklearn.metrics import classification_report
 
 
 
-class Network(object):
+class NetworkTanh(object):
 
     def __init__(self, sizes):
         """The list ``sizes`` contains the number of neurons in the

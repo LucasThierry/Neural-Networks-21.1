@@ -131,7 +131,7 @@ class Network(object):
         test_results = [(np.argmax(self.feedforward(x)), y)
                         for (x, y) in test_data]
         list1, list2 = zip(*test_results)
-        print("Accuracy for each class")
+        print("\nAccuracy for each class")
         matrix = confusion_matrix(list1, list2)
         matrix = matrix.astype('float') / matrix.sum(axis=1)[:, np.newaxis]
         print(matrix.diagonal())
@@ -151,3 +151,6 @@ def sigmoid(z):
 def sigmoid_prime(z):
     """Derivative of the sigmoid function."""
     return sigmoid(z)*(1-sigmoid(z))
+
+def tanh(x):
+	return (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x))
