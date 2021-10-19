@@ -65,10 +65,11 @@ class Network(object):
             for mini_batch in mini_batches:
                 self.update_mini_batch(mini_batch, eta)
             if test_data:
-                hits= self.evaluate(test_data)
-                print "Epoch {0}: {1} / {2}".format(
-                    j, hits, n_test)
-                print "Accuracy = %.2f%%" % (100*float(hits)/n_test)
+                if j == epochs - 1:
+                    hits= self.evaluate(test_data)
+                    print "Epoch {0}: {1} / {2}".format(
+                        j, hits, n_test)
+                    print "Accuracy = %.2f%%" % (100*float(hits)/n_test)
             else:
                 print "Epoch {0} complete".format(j)
 
